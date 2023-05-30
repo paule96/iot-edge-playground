@@ -3,20 +3,26 @@
 {
 	"name": "Debian",
 	// Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
-	"image": "mcr.microsoft.com/iotedge/iotedgedev",
+	"image": "mcr.microsoft.com/devcontainers/base:bullseye",
 	"features": {
-		"ghcr.io/devcontainers/features/azure-cli:1": {
-			"extensions": "azure-iot"
-		},
+		
+		// needed for the iot edge emulator
+		"ghcr.io/devcontainers/features/python:1": {},
 		"ghcr.io/devcontainers/features/docker-in-docker:2": {},
+		// neded for azure functions
 		"ghcr.io/devcontainers/features/dotnet:1": {},
+		"ghcr.io/jlaundry/devcontainer-features/azure-functions-core-tools:1": {},
+		// needed for comfort
 		"ghcr.io/devcontainers/features/powershell": {
 			"modules": "az,Microsoft.Graph,Bicep",
 			"version": "latest"
 		},
-		"ghcr.io/jlaundry/devcontainer-features/azure-functions-core-tools:1": {},
+		"ghcr.io/devcontainers/features/azure-cli:1": {
+			"extensions": "azure-iot"
+		},
 		"ghcr.io/jlaundry/devcontainer-features/mssql-odbc-driver:1": {}
 	},
+	"postStartCommand": "pip install -r /workspaces/iot-edge-playground/requirements.txt",
 
 	// Features to add to the dev container. More info: https://containers.dev/features.
 	// "features": {},
