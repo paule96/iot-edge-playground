@@ -70,6 +70,39 @@
               "image": "mcr.microsoft.com/azureiotedge-simulated-temperature-sensor:1.4",
               "createOptions": {}
             }
+          },
+          "DatabaseModule": {
+            "env": {
+              "ACCEPT_EULA": {
+                "value": "Y"
+              },
+              "MSSQL_SA_PASSWORD": {
+                "value": "ThisIsAStrongPassword1!!11"
+              },
+              "MSSQL_LCID": {
+                "value": "1033"
+              },
+              "MSSQL_COLLATION": {
+                "value": "SQL_Latin1_General_CP1_CI_AS"
+              }
+            },
+            "restartPolicy": "always",
+            "settings": {
+              "image": "mcr.microsoft.com/azure-sql-edge/developer",
+              "createOptions": "{\"HostConfig\":{\"CapAdd\":[\"SYS_PTRACE\"],\"Binds\":[\"sqlvolume:/sqlvolume\"],\"PortBindings\":{\"1433/tcp\":[{\"HostPort\":\"1433\"}]},\"Mounts\":[{\"Type\":\"volume\",\"Source\":\"sqlvolume\",\"Target\":\"/var/opt/mssql\"}]},\"Env\":[\"MSSQL_AGENT_ENABLED=TRUE\",\"ClientTransportType=AMQP_TCP_Only\",\"PlanId=asde-developer-on-iot-edge\"]}"
+            },
+            "status": "running",
+            "type": "docker"
+          },
+          "Grafana":{
+            "env": {
+            },
+            "restartPolicy": "always",
+            "settings": {
+              "image": "grafana/grafana-oss:latest"
+            },
+            "status": "running",
+            "type": "docker"
           }
         }
       }
