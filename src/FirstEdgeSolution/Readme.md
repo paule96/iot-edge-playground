@@ -24,3 +24,18 @@ iotedgedev simulator start --file ./config/deployment.amd64.json
 ```powershell
 docker ps
 ```
+
+## Monitor you application
+
+> You need for the next step your iot hub connection string.
+
+```powershell
+$env:IOTHUB_CONNECTION_STRING=(Read-Host -MaskInput)
+iotedgedev iothub monitor
+```
+
+## Access the database
+
+```
+Server=tcp:localhost,1433;Initial Catalog=master;Persist Security Info=False;Encrypt=True;TrustServerCertificate=False;User Id=sa;Password=<Default_MSSQL_SA_Password>;
+```
