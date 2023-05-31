@@ -38,7 +38,8 @@
 				"msazurermtools.azurerm-vscode-tools",
 				"ms-azuretools.vscode-bicep",
 				"njzy.stats-bar",
-				"vsciot-vscode.azure-iot-edge"
+				"vsciot-vscode.azure-iot-edge",
+				"ms-mssql.mssql"
 			]
 		}
 	}
