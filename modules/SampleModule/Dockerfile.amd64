@@ -1,0 +1,16 @@
+FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build-env
+WORKDIR /app
+
+COPY src/FirstEdgeSolution/modules/SampleModule/SampleModule.csproj ./
+RUN dotnet restore
+
+COPY . ./
+RUN dotnet publish src/FirstEdgeSolution/modules/SampleModule/SampleModule.csproj -c Release -o out
+
+FROM mcr.microsoft.com/azure-functions/dotnet:4
+
+ENV AzureWebJobsScriptRoot=/app
+
+ENV AzureFunctionsJobHost__Logging__Console__IsEnabled=true
+
+COPY --from=build-env /app/out /app

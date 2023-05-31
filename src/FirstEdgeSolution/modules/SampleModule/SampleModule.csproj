@@ -1,7 +1,8 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <TargetFramework>netstandard2.0</TargetFramework>
-    <AzureFunctionsVersion></AzureFunctionsVersion>
+    <TargetFramework>net6.0</TargetFramework>
+    <AzureFunctionsVersion>v4</AzureFunctionsVersion>
+    <UserSecretsId>0f2180e5-ea58-413d-8aeb-0d7dbcfc8901</UserSecretsId>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|netcoreapp3.1|AnyCPU'">
     <TreatWarningsAsErrors>True</TreatWarningsAsErrors>
@@ -9,10 +10,12 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.Azure.WebJobs.Extensions.EdgeHub" Version="1.0.7" />
-    <PackageReference Include="Microsoft.NET.Sdk.Functions" Version="3.0.13" />
-    <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="2.1.1" />
-    <PackageReference Include="Microsoft.Azure.WebJobs.Script.ExtensionsMetadataGenerator" Version="1.2.3" />
+    <PackageReference Include="Microsoft.Azure.Functions.Extensions" Version="1.1.0" />
+    <!-- <PackageReference Include="Microsoft.Azure.WebJobs.Extensions.EdgeHub" Version="1.0.7" /> -->
+    <PackageReference Include="Microsoft.NET.Sdk.Functions" Version="4.1.3" />
+    <!-- <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="2.1.1" /> -->
+    <!-- <PackageReference Include="Microsoft.Azure.WebJobs.Script.ExtensionsMetadataGenerator" Version="1.2.3" /> -->
+    <PackageReference Include="Microsoft.Data.SqlClient" Version="5.1.1" />
   </ItemGroup>
   <ItemGroup>
     <None Update="host.json">
@@ -23,4 +26,8 @@
       <CopyToPublishDirectory>Never</CopyToPublishDirectory>
     </None>
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\libs\Microsoft.Azure.WebJobs.Extensions.EdgeHub\Microsoft.Azure.WebJobs.Extensions.EdgeHub.csproj" />
+  </ItemGroup>
+  
 </Project>

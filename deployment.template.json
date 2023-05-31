@@ -56,8 +56,13 @@
             "type": "docker",
             "status": "running",
             "restartPolicy": "always",
+            "env": {
+              "ConnectionStrings__Database": {
+                "value": "Server=tcp:DatabaseModule,1433;Initial Catalog=master;Persist Security Info=False;Encrypt=True;TrustServerCertificate=True;User Id=sa;Password=ThisIsAStrongPassword1!!11;"
+              }
+            },
             "settings": {
-              "image": "${MODULES.SampleModule.debug}",
+              "image": "${MODULES.SampleModule}",
               "createOptions": {}
             }
           },
@@ -94,12 +99,12 @@
             "status": "running",
             "type": "docker"
           },
-          "Grafana":{
-            "env": {
-            },
+          "Grafana": {
+            "env": {},
             "restartPolicy": "always",
             "settings": {
-              "image": "grafana/grafana-oss:latest"
+              "image": "grafana/grafana-oss:latest",
+              "createOptions": "{\"HostConfig\":{\"PortBindings\":{\"3000/tcp\":[{\"HostPort\":\"300\"}]}}}"
             },
             "status": "running",
             "type": "docker"

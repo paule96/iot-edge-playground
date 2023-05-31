@@ -37,5 +37,5 @@ iotedgedev iothub monitor
 ## Access the database
 
 ```
-Server=tcp:localhost,1433;Initial Catalog=master;Persist Security Info=False;Encrypt=True;TrustServerCertificate=False;User Id=sa;Password=<Default_MSSQL_SA_Password>;
+Server=tcp:localhost,1433;Initial Catalog=master;Persist Security Info=False;Encrypt=True;TrustServerCertificate=True;User Id=sa;Password=ThisIsAStrongPassword1!!11;
 ```
