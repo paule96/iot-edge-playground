@@ -49,3 +49,10 @@ Server=tcp:localhost,1433;Initial Catalog=master;Persist Security Info=False;Enc
 
 This can be used on the left side with the database project after starting the solution. There you will find a SQL script that will setup a database table for you.
 After this the application is up and running.
+
+### Access Grafana
+
+> Note: Right now grafana needs to setup after every restart of the solution. This will be fixed later.
+
+To access grafanan search in the `Ports` section of you VSCode for an exposed port `3000`. Then you can just open the browser on the vscode generate external port.
+After that you can login with `admin`as username and password.

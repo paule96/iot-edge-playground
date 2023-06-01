@@ -104,7 +104,8 @@
             },
             "restartPolicy": "always",
             "settings": {
-              "image": "grafana/grafana-oss:latest"
+              "image": "grafana/grafana-oss:latest",
+              "createOptions": "{\"HostConfig\":{\"PortBindings\":{\"3000/tcp\":[{\"HostPort\":\"3000\"}]}}}"
             },
             "status": "running",
             "type": "docker"
