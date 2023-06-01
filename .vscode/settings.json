@@ -1,5 +1,5 @@
 {
-    "azureFunctions.deploySubpath": "src/FirstEdgeSolution/modules/SampleModule/bin/Release/netstandard2.0/publish",
+    "azureFunctions.deploySubpath": "src/FirstEdgeSolution/modules/SampleModule/bin/Release/net6.0/publish",
     "azureFunctions.projectLanguage": "C#",
     "azureFunctions.projectRuntime": "~4",
     "debug.internalConsoleOptions": "neverOpen",
