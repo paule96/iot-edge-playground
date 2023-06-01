@@ -54,5 +54,5 @@ After this the application is up and running.
 
 > Note: Right now grafana needs to setup after every restart of the solution. This will be fixed later.
 
-To access grafanan search in the `Ports` section of you VSCode for an exposed port `3000`. Then you can just open the browser on the vscode generate external port.
+To access grafanan search in the `Ports` section of you VSCode for an exposed port with the label `Grafana`. Then you can just open the browser on the vscode generate external port.
 After that you can login with `admin`as username and password.
