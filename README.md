@@ -56,3 +56,9 @@ After this the application is up and running.
 
 To access grafanan search in the `Ports` section of you VSCode for an exposed port with the label `Grafana`. Then you can just open the browser on the vscode generate external port.
 After that you can login with `admin`as username and password.
+
+A sample query for an Dashboard is the following:
+
+```sql
+Select * From [dbo].[Temperature] ORDER BY [Timestamp] DESC
+```
