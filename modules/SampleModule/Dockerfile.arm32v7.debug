@@ -8,11 +8,13 @@ RUN apt-get update && \
 FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build-env
 WORKDIR /app
 
-COPY *.csproj ./
+COPY src/FirstEdgeSolution/modules/SampleModule/SampleModule.csproj ./
 RUN dotnet restore
 
-COPY . ./
-RUN dotnet publish -c Debug -o out
+COPY ./external ./external
+
+COPY ./src/FirstEdgeSolution ./src/FirstEdgeSolution
+RUN dotnet publish src/FirstEdgeSolution/modules/SampleModule/SampleModule.csproj -c Debug -o out
 
 FROM base
 
