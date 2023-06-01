@@ -60,5 +60,5 @@ After that you can login with `admin`as username and password.
 A sample query for an Dashboard is the following:
 
 ```sql
-Select * From [dbo].[Temperature] ORDER BY [Timestamp] DESC
+Select [Timestamp], [Temperature], [Type] AS metric From [dbo].[Temperature] ORDER BY [Timestamp] DESC
 ```
