@@ -5,6 +5,10 @@ just some fun with IOT edge
 
 ### Build and Run
 
+0. init git submodules
+
+git submodule update --init --recursive
+
 1. Build your solution
 
 ```powershell
