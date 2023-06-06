@@ -2,6 +2,29 @@
   "version": "0.2.0",
   "configurations": [
     {
+      "name": "SampleModule Remote Debug (.NET Core)",
+      "type": "coreclr",
+      "request": "attach",
+      "processId": "${command:pickRemoteProcess}",
+      "pipeTransport": {
+        "pipeProgram": "docker",
+        "pipeArgs": [
+          "exec",
+          "-i",
+          "SampleModule",
+          "sh",
+          "-c"
+        ],
+        "debuggerPath": "~/vsdbg/vsdbg",
+        "pipeCwd": "${workspaceFolder}",
+        "quoteArgs": true
+      },
+      "sourceFileMap": {
+        "/app": "${workspaceFolder}"
+      },
+      "justMyCode": true
+    },
+    {
       "name": "Attach to .NET Functions",
       "type": "coreclr",
       "request": "attach",

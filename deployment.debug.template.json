@@ -62,7 +62,7 @@
               }
             },
             "settings": {
-              "image": "${src/FirstEdgeSolution/modules/SampleModule}",
+              "image": "${MODULES.SampleModule.debug}",
               "createOptions": {}
             }
           },
