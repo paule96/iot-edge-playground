@@ -24,7 +24,7 @@
 		},
 		"ghcr.io/jlaundry/devcontainer-features/mssql-odbc-driver:1": {}
 	},
-	"postStartCommand": "pip3 install -r /workspaces/iot-edge-playground/requirements.txt && rm -rf ~/.local/lib/python3.9/site-packages/OpenSSL/ && pip3 install --force-reinstall cryptography==38.0.4 pyopenssl==22.0.0",
+	"postStartCommand": "pip install -r /workspaces/iot-edge-playground/requirements.txt",
 
 	// Features to add to the dev container. More info: https://containers.dev/features.
 	// "features": {},
