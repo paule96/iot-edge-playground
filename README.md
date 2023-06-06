@@ -7,7 +7,9 @@ just some fun with IOT edge
 
 0. init git submodules
 
+```powershell
 git submodule update --init --recursive
+```
 
 1. Build your solution
 
