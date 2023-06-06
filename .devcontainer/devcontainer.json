@@ -41,7 +41,8 @@
 				"ms-azuretools.vscode-bicep",
 				"njzy.stats-bar",
 				"vsciot-vscode.azure-iot-edge",
-				"ms-mssql.mssql"
+				"ms-mssql.mssql",
+				"jeppeandersen.vscode-kafka"
 			]
 		}
 	},
