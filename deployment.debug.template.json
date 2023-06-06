@@ -99,9 +99,8 @@
             "status": "running",
             "type": "docker"
           },
-          "Grafana":{
-            "env": {
-            },
+          "Grafana": {
+            "env": {},
             "restartPolicy": "always",
             "settings": {
               "image": "grafana/grafana-oss:latest",
@@ -109,6 +108,29 @@
             },
             "status": "running",
             "type": "docker"
+          },
+          "KafkaModule": {
+            "version": "1.0",
+            "type": "docker",
+            "status": "running",
+            "restartPolicy": "always",
+            "settings": {
+              "image": "${MODULES.KafkaModule.debug}",
+              "createOptions": {
+                "ExposedPorts": {
+                  "5678/tcp": {}
+                },
+                "HostConfig": {
+                  "PortBindings": {
+                    "5678/tcp": [
+                      {
+                        "HostPort": "5678"
+                      }
+                    ]
+                  }
+                }
+              }
+            }
           }
         }
       }
@@ -118,7 +140,8 @@
         "schemaVersion": "1.4",
         "routes": {
           "SampleModuleToIoTHub": "FROM /messages/modules/SampleModule/outputs/* INTO $upstream",
-          "sensorToSampleModule": "FROM /messages/modules/SimulatedTemperatureSensor/outputs/temperatureOutput INTO BrokeredEndpoint(\"/modules/SampleModule/inputs/input1\")"
+          "sensorToSampleModule": "FROM /messages/modules/SimulatedTemperatureSensor/outputs/temperatureOutput INTO BrokeredEndpoint(\"/modules/SampleModule/inputs/input1\")",
+          "KafkaModuleToIoTHub": "FROM /messages/modules/KafkaModule/outputs/* INTO $upstream"
         },
         "storeAndForwardConfiguration": {
           "timeToLiveSecs": 7200

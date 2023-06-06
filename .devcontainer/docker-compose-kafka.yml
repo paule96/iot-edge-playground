@@ -11,10 +11,10 @@ services:
   broker:
     image: confluentinc/cp-kafka:7.3.2
     container_name: broker
-    ports:
+    # ports:
     # To learn about configuring Kafka for access across networks see
     # https://www.confluent.io/blog/kafka-client-cannot-connect-to-broker-on-aws-on-docker-etc/
-      - "9092:9092"
+    #  - "9092:9092"
     depends_on:
       - zookeeper
     environment:
@@ -25,10 +25,20 @@ services:
       KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1
       KAFKA_TRANSACTION_STATE_LOG_MIN_ISR: 1
       KAFKA_TRANSACTION_STATE_LOG_REPLICATION_FACTOR: 1
-  
+    network_mode: service:devcontainer
+
+  influx:
+    image: influxdb:2.7.1
+    container_name: influx
+    # ports:
+    #  - "8086:8086"
+    network_mode: service:devcontainer
+
   devcontainer:
     image: mcr.microsoft.com/devcontainers/base:bullseye
     volumes:
       - ../..:/workspaces:cached
-    network_mode: service:broker
     command: sleep infinity
+    ports:
+      - "9092:9092"
+      - "8086:8086"
