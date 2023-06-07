@@ -66,3 +66,17 @@ A sample query for an Dashboard is the following:
 ```sql
 Select [Timestamp], [Temperature], [Type] AS metric From [dbo].[Temperature] ORDER BY [Timestamp] DESC
 ```
+
+### Access Kafka Broker
+
+You can access the broker conainer with `docker exec -it broker bash`
+
+Use VS Code's Kafka extension to browse brokers or to list and create topics.
+
+You can use the Kafka-CLI inside the broker container to produce messages. 
+
+`kafka-console-producer --bootstrap-server=localhost:9092 --topic=quickstart`
+
+### Acess InfluxDB 
+
+You can access the GUI via localhost:8086
