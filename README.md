@@ -68,3 +68,19 @@ A sample query for an Dashboard is the following:
 ```sql
 Select [Timestamp], [Temperature], [Type] AS metric From [dbo].[Temperature] ORDER BY [Timestamp] DESC
 ```
+
+## Start Krafana and influx
+
+To start Krafana and influx run:
+
+```powershell
+docker compose -f docker-compose-kafka.yml up -d
+```
+
+To stop run
+
+```powershell
+docker compose -f docker-compose-kafka.yml down -d
+```
+
+To connect to it, use localhost as DNS name.

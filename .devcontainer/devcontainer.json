@@ -3,8 +3,9 @@
 {
 	"name": "Debian",
 	// Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
-	"dockerComposeFile": "docker-compose-kafka.yml",
-	"service": "devcontainer",
+	// "dockerComposeFile": "docker-compose-kafka.yml",
+	// "service": "devcontainer",
+	"image": "mcr.microsoft.com/devcontainers/base:bullseye",
 	"workspaceFolder": "/workspaces/${localWorkspaceFolderBasename}",
 	"features": {
 		
