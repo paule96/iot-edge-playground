@@ -15,7 +15,7 @@ TOPICS = ["quickstart"]
 
 # InfluxDB
 
-TOKEN = "vk3MMRlYtNgjIN7xTdMs7ngzELTom8G6mcdmfHmxomzLothBUPSUcVYIAfKVy4ZRT7-iLATEOJvbXJg-mfjKew=="
+TOKEN = "dLHMQ1UoMcx7RUcJmqWD4vJBAWzCnelYJkfuh_zMDq9sVpXiDb_LBB-ADGRqVHcZBewlfVz40ImfJzlo8pOfgw=="
 ORG = "test"
 URL = "http://localhost:8086"
 BUCKET = "test"

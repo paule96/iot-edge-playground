@@ -1,3 +1,1 @@
 iotedgedev
-confluent_kafka
-influxdb_client

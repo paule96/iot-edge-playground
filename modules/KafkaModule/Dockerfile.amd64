@@ -2,9 +2,9 @@ FROM amd64/python:3.7-slim-buster
 
 WORKDIR /app
 
-COPY requirements.txt ./
+COPY ./modules/KafkaModule/requirements.txt ./
 RUN pip install -r requirements.txt
 
-COPY . .
+COPY ./src/FirstEdgeSolution/modules/KafkaModule .
 
-CMD [ "python3", "-u", "./main.py" ]
+CMD [ "python3", "-u", "./KafkaModule.py" ]
