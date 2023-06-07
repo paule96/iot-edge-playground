@@ -84,3 +84,17 @@ docker compose -f docker-compose-kafka.yml down -d
 ```
 
 To connect to it, use localhost as DNS name.
+
+### Access Kafka Broker
+
+You can access the broker conainer with `docker exec -it broker bash`
+
+Use VS Code's Kafka extension to browse brokers or to list and create topics.
+
+You can use the Kafka-CLI inside the broker container to produce messages. 
+
+`kafka-console-producer --bootstrap-server=localhost:9092 --topic=quickstart`
+
+### Acess InfluxDB 
+
+You can access the GUI via localhost:8086
